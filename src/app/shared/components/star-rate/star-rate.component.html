@@ -1,0 +1,35 @@
+<div style="font-size: 14px ;">
+    <span>
+        <i *ngIf="rate<0.5" class=" txt-primary fa-regular fa-star"></i>
+        <i *ngIf="rate>=0.5 && rate<1" class=" txt-primary fa-solid fa-star-half-stroke"></i>
+        <i *ngIf="rate>=1" class=" txt-primary fa-solid fa-star"></i>
+    </span>
+
+    <span>
+        <i *ngIf="rate<1.5" class=" txt-primary fa-regular fa-star"></i>
+        <i *ngIf="rate>=1.5 && rate<2" class=" txt-primary fa-solid fa-star-half-stroke"></i>
+        <i *ngIf="rate>=2" class=" txt-primary fa-solid fa-star"></i>
+    </span>
+
+    <span>
+        <i *ngIf="rate<2.5" class=" txt-primary fa-regular fa-star"></i>
+        <i *ngIf="rate>=2.5 && rate<3" class=" txt-primary fa-solid fa-star-half-stroke"></i>
+        <i *ngIf="rate>=3" class=" txt-primary fa-solid fa-star"></i>
+    </span>
+
+    <span>
+        <i *ngIf="rate<3.5" class=" txt-primary fa-regular fa-star"></i>
+        <i *ngIf="rate>=3.5 && rate<4" class=" txt-primary fa-solid fa-star-half-stroke"></i>
+        <i *ngIf="rate>=4" class=" txt-primary fa-solid fa-star"></i>
+    </span>
+
+    <span>
+        <i *ngIf="rate<4.5" class=" txt-primary fa-regular fa-star"></i>
+        <i *ngIf="rate>=4.5 && rate<5" class=" txt-primary fa-solid fa-star-half-stroke"></i>
+        <i *ngIf="rate>=5" class=" txt-primary fa-solid fa-star"></i>
+    </span>
+
+    <p class="d-inline ps-2">{{rate}}</p>
+
+
+</div>

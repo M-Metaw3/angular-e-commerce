@@ -1,0 +1,40 @@
+<h2 class=" mt-5 mb-3 display-6 text-center txt-primary">WishList</h2>
+
+
+<div *ngIf="!isLoading" class="text-center">
+  <div class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+
+<div *ngIf="isLoading">
+
+
+  <div *ngIf="check; then thenblock; else elseblock"></div>
+
+  <ng-template #thenblock>
+    <div class="container">
+
+
+      <div class="row">
+        <div *ngFor="let whishitem of WishList" class="col-sm-12 col-md-6 col-lg-3">
+          <app-product-card [product]="whishitem.product" [onClickRemove]="onClickRemove">
+          </app-product-card>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #elseblock>
+    <div class="container">
+      <div class="row show">
+        <div class="d-flex justify-content-start">
+          <h2 class="col-4 mt-3 mb-3">you don't have WishList</h2>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+
+</div>

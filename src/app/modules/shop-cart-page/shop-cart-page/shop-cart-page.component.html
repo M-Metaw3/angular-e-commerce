@@ -1,0 +1,73 @@
+<h2 class=" mt-5  display-6 txt-primary text-center ">Shopping Cart</h2>
+
+
+<div *ngIf="!isLoading" class="text-center">
+    <div class="spinner-border text-warning" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div *ngIf="isLoading">
+    <ng-container *ngIf="carItemList.length > 0 ">
+        <div class="p-5">
+            <div class="card-table">
+                <div class="cart-product">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th> Product Name </th>
+                                <th> Product Image </th>
+                                <th> Price </th>
+                                <th> Quantity </th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of carItemList">
+                                <td class="align-baseline"><img src="{{order.product.product.image}}" alt="" srcset=""
+                                        class="img"></td>
+                                <td class="align-baseline">{{order.product.product.title}}</td>
+                                <td class="align-baseline">$ {{order.product.product.price * order.product.count |
+                                    number :
+                                    '.2'}}</td>
+                                <td class="align-baseline">
+                                    <button (click)="minusValue(order)" class="btn btn-quantity-controll"><i
+                                            class="fa fa-minus"></i></button>
+                                    <span class="quanitity-number">{{order.product.count}}</span>
+                                    <button (click)="plusValue(order)" class="btn btn-quantity-controll"><i
+                                            class="fa fa-plus"></i></button>
+                                </td>
+                                <td class="align-baseline"><button class="btn btn-delete" (click)="deleteItem(order)"><i
+                                            class="fa fa-trash"></i></button></td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <div class="payment-control">
+                        <button class="btn btn-payment" (click)="goToPaymentScreen()">Proceed to Buy</button>
+                        <span class="fs-4">Total $ {{total | number : '.2'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+
+    <ng-container *ngIf="carItemList.length == 0 ">
+        <div class="container">
+            <div class="card " style="height: 65vh;">
+                <h5 class="card-tittle">My Cart</h5>
+            </div>
+            <div class="center flex-column">
+                <img src="./assets/empty-shopping-cart.png" alt="" srcset="">
+                <h4>Your Cart is empty!</h4>
+                <h5>Add item to it now</h5>
+                <button class="btn btn-hover bg-primary-color text-light" (click)="goToProductsScreen()">Shop
+                    Now</button>
+            </div>
+        </div>
+    </ng-container>
+
+
+</div>

@@ -1,0 +1,29 @@
+$primaryColor: #e99c2e;
+$SecondaryColor: #616060;
+$myText-light: #A6A4A2;
+$Bg-color-main: #f8f9fd;
+
+.btn-m {
+  color: #fff;
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+}
+.btn-m:hover,
+.btn-m:focus,
+.btn-m:active,
+.btn-m.active,
+.open > .dropdown-toggle.btn-m {
+  color: $primaryColor;
+  background-color: $Bg-color-main;
+  border-color: $primaryColor;
+}
+
+a {
+  transition: .3s;
+  margin-bottom: 2%;
+}
+
+a:hover {
+  color: $primaryColor;
+  transform: translateX(10px);
+}

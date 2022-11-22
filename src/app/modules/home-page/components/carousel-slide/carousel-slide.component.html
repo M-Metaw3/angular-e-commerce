@@ -1,0 +1,35 @@
+<div class="d-flex flex-row-reverse">
+  <img
+    [src]="props.img"
+    class="d-none d-lg-block"
+    style="width: 600px"
+    alt="pic1"
+  />
+  <img
+    [src]="props.img"
+    class="d-block d-lg-none opacity-25"
+    style="width: 600px"
+    alt="pic1"
+  />
+</div>
+
+<div class="carousel-caption text-start" style="bottom: 8.5rem; left: 8%">
+  <h4 class="fw-light txt-light">Great Design Collection</h4>
+  <h2 class="display-5 fw-normal mb-4 txt-secondary">
+    {{ props.title }}
+  </h2>
+  <p class="txt-light">
+    Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiuiana
+    Smod Tempor Ut<br />
+    Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam,<br />
+    Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip.
+  </p>
+  <div class="packages-price mb-4">
+    <p class="animated fadeInUp txt-secondary">
+      $ {{ props.priceAfter }}
+      <del class="txt-light">$ {{ props.priceBefore }}</del>
+    </p>
+  </div>
+  <button (click)="goToProductPage()" class="btn btn-m btn-lg">See More</button>
+</div>
+

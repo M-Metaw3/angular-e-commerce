@@ -1,0 +1,46 @@
+<div class="d-flex flex-column m-4 my-card shadow-sm  " style="width: 16rem; height: 480px">
+  <div class="p-3" style="background-color: white; text-align: center">
+    <img class="w-100" [src]="product.image" style="height: 150px; object-fit: contain" alt="product.title" />
+  </div>
+  <div class="d-flex flex-column flex-grow-1 p-4 txt-secondary">
+    <h6 class="text fw-bold">{{ product.title }}</h6>
+    <div class="flex-grow-1">
+      <p class="text ">{{ product.description }}</p>
+      <app-star-rate [rate]="product.rating.rate"></app-star-rate>
+      <p>{{product.price}} $</p>
+    </div>
+
+
+    <div class="d-flex flex-row">
+      <div class="flex-grow-1" title="Add to Cart">
+
+        <a (click)="onClickAddToCard(product.id)"
+          class="btn w-100 mb-2 bg-primary-color text-light fw-semibold btn-hover"><i
+            class="fa-solid fa-cart-plus"></i></a>
+      </div>
+
+      <div class="flex-grow-1" [class.px-2]="onClickRemove" [class.ps-3]="!onClickRemove" title="more info">
+        <a (click)="goToProductDetails()" class=" btn mb-2 w-100 bg-primary-color text-light fw-semibold btn-hover"><i
+            class="fa-solid fa-info"></i></a>
+      </div>
+
+      <div *ngIf="onClickRemove" class="flex-grow-1" title="delete from wish">
+        <a (click)="onClickRemove(product.id)"
+          class="btn w-100 fw-semibold bg-danger text-light fa-solid fa-trash-can delete-btn">
+        </a>
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>

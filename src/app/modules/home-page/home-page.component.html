@@ -1,0 +1,103 @@
+<!-- Carousel Start   -->
+<div
+  id="carouselExampleIndicators"
+  class="carousel slide"
+  data-bs-ride="true"
+  data-interval="1500"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <app-carousel-slide [props]="objArr[0]"></app-carousel-slide>
+    </div>
+    <div class="carousel-item">
+      <app-carousel-slide [props]="objArr[1]"></app-carousel-slide>
+    </div>
+    <div class="carousel-item">
+      <app-carousel-slide [props]="objArr[2]"></app-carousel-slide>
+    </div>
+  </div>
+</div>
+<!-- Carousel End   -->
+
+<!-- Section 1 Start -->
+
+<div class="container">
+  <div class="row m-5">
+    <div class="col-lg-3 bg-light p-3 text-center me-lg-4 mb-4">
+      <img src="../../../assets/1.png" alt="" style="width: 150px" />
+      <h6 class="txt-primary">Accent Chair</h6>
+      <p class="txt-light" style="font-size: 14px">
+        Nemo enim ipsam voluptatem quia volu ptas sit asperna aut odit aut
+      </p>
+    </div>
+
+    <div class="col-lg-5 bg-light p-5 mb-4">
+      <div class="row">
+        <div class="col-4">
+          <img
+            src="../../../assets/2.png"
+            style="width: 140px; margin: 0 -30px"
+          />
+        </div>
+        <div class="col-8">
+          <div class="ms-3">
+            <h6 class="txt-primary mb-4">Samsung 860 EVO SATA III 2.5</h6>
+
+            <p class="txt-light" style="font-size: 14px">
+              Edi Ut Perspiciatis Unde Omnis Iste Natusina Error Sit Unde Omnis
+              Iste Unde Omnis Natusina Error Sit
+            </p>
+            <span class="txt-secondary fw-semibold">Sales Start from</span>
+            <span class="txt-primary"> $99.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 bg-light p-3 text-center ms-lg-4 mb-4">
+      <img src="../../../assets/3.png" alt="" style="width: 150px" />
+      <h6 class="txt-primary">Clothes iron Panasonic</h6>
+      <p class="txt-light" style="font-size: 14px">
+        Nemo enim ipsam voluptatem quia volu ptas sit asperna aut odit aut
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 1 End -->
+
+<!-- New Arrivals 1 Start -->
+
+<h1 class="text-center p-1 txt-secondary display-6">New Arrivals</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let product of productArr">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>
+
+<!-- New Arrivals 1 End -->

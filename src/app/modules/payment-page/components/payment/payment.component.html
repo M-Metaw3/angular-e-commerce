@@ -1,0 +1,186 @@
+<div class="container">
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <!-- Form Start  -->
+        <form [formGroup]="paymentForm">
+          <!-- {{paymentForm.value|json}} -->
+
+          <div class="row">
+            <div class="col-50">
+              <h3>Billing Address</h3>
+
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" formControlName="fullName" [class.is-invalid]="fullName?.invalid && fullName?.touched"
+                id="fname" name="firstname" placeholder="John M. Doe" />
+              <div class="mb-4" *ngIf="fullName?.invalid && fullName?.touched">
+                <small class="text-danger" *ngIf="fullName?.errors?.['required']">Full Name is required
+                </small>
+                <small class="text-danger" *ngIf="fullName?.errors?.['pattern']">Full Name invalid
+                </small>
+              </div>
+
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" formControlName="email" [class.is-invalid]="email?.invalid && email?.touched"
+                id="email" name="email" placeholder="john@example.com" />
+              <div class="mb-4" *ngIf="email?.invalid && email?.touched">
+                <small class="text-danger" *ngIf="email?.errors?.['required']">Email is required
+                </small>
+                <small class="text-danger" *ngIf="email?.errors?.['pattern']">Email invalid
+                </small>
+              </div>
+
+              <!-- Address Start  -->
+              <div formGroupName="addressAll">
+                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                <input type="text" formControlName="address" [class.is-invalid]="address?.invalid && address?.touched"
+                  id="adr" name="address" placeholder="542 W. 15th Street" />
+                <div class="mb-4" *ngIf="address?.invalid && address?.touched">
+                  <small class="text-danger" *ngIf="address?.errors?.['required']">Address is required
+                  </small>
+                </div>
+
+                <label for="city"><i class="fa fa-institution"></i> City</label>
+                <input type="text" formControlName="city" [class.is-invalid]="city?.invalid && city?.touched" id="city"
+                  name="city" placeholder="New York" />
+                <div class="mb-4" *ngIf="city?.invalid && city?.touched">
+                  <small class="text-danger" *ngIf="city?.errors?.['required']">City is required
+                  </small>
+                </div>
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="state">State</label>
+                    <input type="text" formControlName="state" [class.is-invalid]="state?.invalid && state?.touched"
+                      id="state" name="state" placeholder="NY" />
+                  </div>
+                  <div class="mb-4" *ngIf="state?.invalid && state?.touched">
+                    <small class="text-danger" *ngIf="state?.errors?.['required']">state is required
+                    </small>
+                  </div>
+
+                  <div class="col-50">
+                    <label for="zip">Zip</label>
+                    <input type="text" formControlName="zipCode"
+                      [class.is-invalid]="zipCode?.invalid && zipCode?.touched" id="zip" name="zip"
+                      placeholder="10001" />
+
+                    <div class="mb-4" *ngIf="zipCode?.invalid && zipCode?.touched">
+                      <small class="text-danger" *ngIf="zipCode?.errors?.['required']">zipCode is required
+                      </small>
+                      <small class="text-danger" *ngIf="zipCode?.errors?.['pattern']">Please Enter Right zipCode
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Address End  -->
+
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa-brands fa-cc-visa me-1" style="color: navy"></i>
+                <i class="fa-brands fa-cc-amex me-1" style="color: blue"></i>
+                <i class="fa-brands fa-cc-mastercard me-1" style="color: red"></i>
+                <i class="fa-brands fa-cc-discover" style="color: orange"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" formControlName="cardName" [class.is-invalid]="cardName?.invalid && cardName?.touched"
+                id="cname" name="cardname" placeholder="John More Doe" />
+
+              <div class="mb-4" *ngIf="cardName?.invalid && cardName?.touched">
+                <small class="text-danger" *ngIf="cardName?.errors?.['required']">Card Name is required
+                </small>
+              </div>
+
+              <label for="ccnum">Credit card number</label>
+              <input type="text" formControlName="cardNumber"
+                [class.is-invalid]="cardNumber?.invalid && cardNumber?.touched" id="ccnum" name="cardnumber"
+                placeholder="1111-2222-3333-4444" />
+
+              <div class="mb-4" *ngIf="cardNumber?.invalid && cardNumber?.touched">
+                <small class="text-danger" *ngIf="cardNumber?.errors?.['required']">cardNumber is required
+                </small>
+                <small class="text-danger" *ngIf="cardNumber?.errors?.['pattern']">Please Enter Right CardNumber (16
+                  Number)
+                </small>
+              </div>
+
+              <label for="expmonth">Exp Month</label>
+              <input type="text" formControlName="expMonth" [class.is-invalid]="expMonth?.invalid && expMonth?.touched"
+                id="expmonth" name="expmonth" placeholder="03" />
+              <div class="mb-4" *ngIf="expMonth?.invalid && expMonth?.touched">
+                <small class="text-danger" *ngIf="expMonth?.errors?.['required']">expMonth is required
+                </small>
+                <small class="text-danger" *ngIf="expMonth?.errors?.['pattern']">Please Enter Right expMonth
+                </small>
+              </div>
+
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" formControlName="expYear" [class.is-invalid]="expYear?.invalid && expYear?.touched"
+                    id="expyear" name="expyear" placeholder="2018" />
+                  <div class="mb-4" *ngIf="expYear?.invalid && expYear?.touched">
+                    <small class="text-danger" *ngIf="expYear?.errors?.['required']">expYear is required
+                    </small>
+                    <small class="text-danger" *ngIf="expYear?.errors?.['pattern']">Please Enter Right expYear
+                    </small>
+                  </div>
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" formControlName="cvv" [class.is-invalid]="cvv?.invalid && cvv?.touched" id="cvv"
+                    name="cvv" placeholder="352" />
+                  <div class="mb-4" *ngIf="cvv?.invalid && cvv?.touched">
+                    <small class="text-danger" *ngIf="cvv?.errors?.['required']">cvv is required
+                    </small>
+                    <small class="text-danger" *ngIf="cvv?.errors?.['pattern']">Please Enter Right cvv
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <input (click)="GoToPaymentDone()" [disabled]="paymentForm.invalid" type="submit" value="Continue to checkout"
+            class="btn" />
+        </form>
+
+        <!-- Form End  -->
+      </div>
+    </div>
+
+    <!-- Products  -->
+    <div class="col-25">
+      <div class="container">
+        <h4>
+          Cart
+          <span class="price" style="color: black">
+            <i class="fa fa-shopping-cart"></i>
+            <b>{{ orders.length }}</b>
+          </span>
+        </h4>
+        <div style="max-height: 500px; overflow: auto" class="scrollable-element">
+          <div *ngFor="let order of orders" class="d-flex mb-4 order-style">
+            <img [src]="order.product.product.image" alt="" width="40%" class="me-2" style="object-fit:contain;" />
+
+            <div class="d-flex flex-column">
+              <p style="font-size: 14px">{{ order.product.product.title }}</p>
+              <p>${{ order.product.product.price | number : '.2'}}</p>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <hr />
+        <p>
+          Total
+          <span class="price" style="color: black"><b>${{ total | number : '.2' }}</b></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

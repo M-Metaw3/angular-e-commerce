@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+$primaryColor: #e99c2e;
+$SecondaryColor: #616060;
+$myText-light: #A6A4A2;
+$Bg-color-main: #f8f9fd;
+
+.txt-primary {
+  color: $primaryColor;
+}
+
+.txt-light {
+  color: $myText-light;
+}
+
+.bg-light {
+  background-color: $myText-light;
+}
+
+.bg-primary-color {
+  background-color: $primaryColor;
+}
+
+.txt-secondary {
+  color: $SecondaryColor;
+}
+
+.bg-secondary-color {
+  background-color: $SecondaryColor;
+}
+
+.txt-main {
+  color: $Bg-color-main;
+}
+
+.bg-main-color {
+  background-color: $Bg-color-main;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  //background-color: $Bg-color-main;
+}
+
+.form-container {
+  display: block;
+  max-width: 450px;
+  margin: auto;
+
+  background: #eceff1;
+  padding: 48px;
+  border-radius: 16px;
+  margin-top: 50px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-top {
+  margin-top: 16px !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-hover:hover {
+  color: $primaryColor !important;
+  border: 1px solid $primaryColor !important;
+}
+
+// .tx-primry {
+//     color: $primaryColor;
+// }
+
+// .bg-primry {
+//     background-color: $primaryColor;
